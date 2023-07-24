@@ -8,5 +8,8 @@ pnpm --filter @gausszhou/todos build
 time=$(date "+%Y-%m-%d %H:%M:%S")
 echo "pnpm success in $time"
 
-touch ./dist/README.md
-echo "# Apps" > ./dist/README.md
+pnpm --filter @gausszhou/tools build
+time=$(date "+%Y-%m-%d %H:%M:%S")
+echo "pnpm success in $time"
+
+cp README.md ./dist/README.md
