@@ -1,0 +1,233 @@
+// 定义桌面
+body {
+  min-width: 360px;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  min-width: var(--app-min-width);
+  overflow: hidden;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 11;
+  width: 100%;
+  min-width: var(--app-min-width);
+  height: var(--app-header-height);
+  box-sizing: border-box;
+  padding: 0 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.app-body {
+  display: flex;
+  position: absolute;
+  top: var(--app-header-height);
+  bottom: var(--app-footer-height);
+  width: 100%;
+  min-width: var(--app-min-width);
+  background-color: #fff;
+}
+
+.app-footer {
+  display: flex;
+  position: absolute;
+  overflow: hidden;
+  left: 0;
+  bottom: 0;
+  z-index: 11;
+  width: 100%;
+  min-width: var(--app-min-width);
+  height: var(--app-footer-height);
+  background-color: #fff;
+  border-top: 1px solid #eee;
+}
+
+.app-body {
+  .app-nav {
+    width: var(--app-sidenav-width);
+    min-width: var(--app-sidenav-width);
+    border-right: 1px solid #e1e1e1;
+  }
+
+  .app-main {
+    flex: 1;
+    width: calc(100vw - var(--app-sidenav-width));
+    box-sizing: border-box;
+  }
+}
+
+#app {
+  ::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #e0e0e0;
+  }
+}
+
+.app-header .header-aside {
+  display: flex;
+  align-items: center;
+}
+
+.app-header-title {
+  margin: 0;
+  padding: 0;
+  color: #2c3e50;
+  font-weight: 500;
+  font-size: 1.3rem;
+  font-family: BlinkMacSystemFont, Segoe UI;
+  padding-left: .5rem;
+  cursor: pointer;
+  width: var(--app-sidenav-width);
+}
+
+.app-header .header-main {
+  display: flex;
+  align-items: center;
+}
+
+.app-header .app-header-search {
+  .el-input__prefix {
+    color: #eee;
+  }
+
+  input {
+    width: 300px;
+    border-radius: 50px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: none;
+    color: #fff;
+
+    &::placeholder {
+      color: #eee;
+    }
+  }
+}
+
+
+.app-nav {
+  background-color: #fff;
+  width: 200px;
+}
+
+.app-nav .app-nav-item {
+  height: 40px;
+  margin: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.app-nav .app-nav-item:hover {
+  background-color: #f7f7f7;
+}
+
+.app-nav .app-nav-item-link {
+  color: black;
+  padding-left: 30px;
+  font-size: 16px;
+  line-height: 40px;
+  width: 100%;
+}
+
+.app-nav .app-nav-item-link.active {
+  background-color: #f7f7f7;
+  font-weight: 700;
+}
+
+.app-main-view {
+  box-sizing: border-box;
+  padding-left: 1rem;
+  height: 100%;
+
+  .app-main-nav {
+    z-index: 11;
+    top: 0;
+    height: var(--app-tabnav-height);
+    width: 100%;
+    background-color: #fff;
+  }
+}
+
+.app-main-page {
+  box-sizing: border-box;
+  padding-right: 1rem;
+  padding-top: 1rem;
+  height: calc(100% - var(--app-tabnav-height));
+  overflow-y: scroll;
+}
+
+.app-main-detail {
+  box-sizing: border-box;
+  padding-right: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.app-footer {
+  z-index: 20;
+  display: flex;
+  align-items: center;
+
+  .song-info {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    max-width: 450px;
+    overflow: hidden;
+  }
+
+  .song-control {
+    flex: 1;
+    max-width: 560px;
+    min-width: 560px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .list-control {
+    max-width: 450px;
+    flex: 1;
+    display: flex;
+  }
+}
+
+
+// 导航
+.el-tabs__item {
+  font-size: 16px;
+}
+
+.el-tabs__item:hover {
+  color: #000;
+}
+
+.el-tabs__item.is-active {
+  color: #333;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.el-tabs__active-bar {
+  background-color: #c3473a;
+}
+
+.el-tabs__nav-wrap::after {
+  display: none;
+}

@@ -1,0 +1,48 @@
+.name-box {
+  margin: 20px 0 0 20px;
+  height: 60px;
+  line-height: 25px;
+
+  .song-name {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .song-author {
+    font-size: 13px;
+  }
+}
+
+
+
+.song-progress {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  height: 16px;
+}
+
+.control-progress {
+  margin: 0 1rem;
+  flex: 1;
+}
+
+.control-progress {
+  .el-slider__runway {
+    background: linear-gradient(90deg,
+        #ec414177 0%,
+        #ec414177 var(--progress),
+        #e4e7ed var(--progress),
+        #e4e7ed 100%);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

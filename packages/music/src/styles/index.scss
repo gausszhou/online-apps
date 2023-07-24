@@ -1,0 +1,49 @@
+// 引入 reset 解决浏览器兼容问题
+@import "./config/reset.scss";
+// 引入原子类样式
+@import "./config/atom.scss";
+// 引入组件库调整后样式
+@import "./config/element.scss";
+// 引入 CSS 变量
+@import "./config/variable.scss";
+
+// 布局
+@import "./layout.scss";
+
+// 每个页面的样式控制
+@import "./view-singer.scss";
+@import "./view-songlist.scss";
+@import "./view-songs.scss";
+@import "./view-audio.scss";
+
+.vue-drr-box {
+  border: none !important;
+}
+
+.vue-drr-slot {
+  background: transparent !important;
+}
+
+#nprogress .bar {
+  background: #ff4e4e !important;
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 10px #f7a7a7, 0 0 5px #f7a7a7;
+}
+
+
+.icon,
+.iconfont {
+  cursor: pointer;
+}
+
+.el-table .el-table__row:hover {
+  background-color: #f5f7fa;
+}
+
+body .el-table tr:nth-child(2n).is-current-song:hover td,
+body .el-table tr.el-table__row.is-current-song:hover td,
+body .el-table tr.el-table__row.is-current-song td{
+  background-color: #f7a7a777 !important;
+}

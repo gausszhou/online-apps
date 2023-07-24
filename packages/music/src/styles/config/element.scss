@@ -1,0 +1,107 @@
+// 对element的样式做一些修改
+
+.el-dialog__footer {
+  display: flex;
+  justify-content: center;
+}
+
+.el-dialog .el-input {
+  max-width: 300px;
+}
+
+.el-slider {
+  .el-slider__runway {
+    margin: 0;
+    height: 3px;
+
+    .el-slider__bar {
+      height: 3px;
+      border-radius: 4px;
+      background-color: #ff4e4e;
+    }
+
+    .el-slider__button-wrapper {
+      top: -16px;
+    }
+    .el-slider__button {
+      background-color: #ff4e4e;
+      border-color: #ff4e4e;
+    }
+
+    .el-tooltip {
+      visibility: hidden;
+      height: 6px;
+      width: 6px;
+    }
+  }
+
+  &:hover {
+    .el-slider__runway {
+      margin: 0;
+      height: 4px;
+
+      .el-slider__bar {
+        height: 4px;
+        border-radius: 4px;
+      }
+
+      .el-slider__button-wrapper {
+        top: -16px;
+      }
+
+      .el-tooltip {
+        visibility: visible;
+        height: 6px;
+        width: 6px;
+      }
+    }
+  }
+}
+
+.el-table {
+  border-bottom: none;
+  border-collapse: collapse;
+}
+
+.el-talbe thead {
+  line-height: 1.5;
+}
+
+.el-table th > .cell {
+  font-weight: normal;
+  color: black;
+}
+
+.el-pagination {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.el-pagination.is-background .el-pager li:not(.disabled).active {
+  background-color: #dd6d60;
+}
+
+.el-table tbody {
+  border-bottom: none !important;
+}
+
+.el-table td {
+  border-bottom: none !important;
+}
+
+.el-table td:first-child {
+  padding-left: 10px !important;
+}
+
+.el-table th {
+  font-weight: normal !important;
+}
+
+.el-table tr:nth-child(2n) {
+  background-color: #fafafa;
+}
+
+.el-table tr:hover {
+  background-color: #f5f7fa;
+}

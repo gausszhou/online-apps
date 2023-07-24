@@ -1,0 +1,146 @@
+// 定义一些原子类
+
+// flex
+.display-flex {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.display-flex_wrap {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.flex-1 {
+  flex: 1 1 auto;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+
+// 单行省略号
+.text-over-elli {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-over-elli-2 {
+  overflow: hidden;
+  text-overflow: -o-ellipsis-lastline;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+.text-over-elli-6 {
+  overflow: hidden;
+  text-overflow: -o-ellipsis-lastline;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+  line-clamp: 6;
+}
+
+// margin && padding
+
+@for $i from 1 to 20 {
+  .mt_#{$i} {
+    margin-top: $i + px;
+  }
+
+  .mb_#{$i} {
+    margin-bottom: $i + px;
+  }
+
+  .ml_#{$i} {
+    margin-left: $i + px;
+  }
+
+  .mr_#{$i} {
+    margin-right: $i + px;
+  }
+
+  .pt_#{$i} {
+    padding-top: $i + px;
+  }
+
+  .pb_#{$i} {
+    padding-bottom: $i + px;
+  }
+
+  .pl_#{$i} {
+    padding-left: $i + px;
+  }
+
+  .pr_#{$i} {
+    padding-right: $i + px;
+  }
+}
+
+// font-size
+
+@for $i from 11 to 30 {
+  .ft_#{$i} {
+    font-size: $i + px !important;
+  }
+}
+
+
+
+.icon {
+  cursor: pointer;
+}
+
+// 过渡
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.drawer-left-enter-active,
+.drawer-left-leave-active {
+  transition: transform 0.5s ease-out;
+  transform-origin: left bottom;
+  transform: scaleX(1) scaleY(1);
+}
+.drawer-left-enter,
+.drawer-left-leave-to {
+  transition: transform 0.5s ease-in;
+  transform-origin: left bottom;
+  transform: scaleX(0) scaleY(0);
+}
+
+// drawer-right
+.drawer-right-enter-active,
+.drawer-right-leave-active {
+  transition: transform 0.5s ease-in;
+  transform-origin: right bottom;
+  transform: scaleX(1) scaleY(1);
+}
+
+.drawer-right-enter,
+.drawer-right-leave-to {
+  transition: transform 0.5s ease-out;
+  transform-origin: right bottom;
+  transform: scaleX(0) scaleY(0);
+}
