@@ -1,0 +1,13 @@
+.DS_Store
+node_modules
+dist
+
+pnpm-lock.yaml
+yarn.lock
+
+*.log
+*.sh
+
+.idea
+.vscode
+.history
