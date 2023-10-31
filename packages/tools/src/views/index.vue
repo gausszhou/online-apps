@@ -1,16 +1,39 @@
+<template>
+  <div id="format">
+    <div id="format-form">
+      <div class="g-menu second-level">
+        <div class="g-menu-item" tabindex="0" :class="{ 'is-active': option.value === language }"
+          v-for="option in languages" :key="option.value" @click="onRadioClick(option.value)">
+          <span class="label">{{ option.label }}</span>
+        </div>
+      </div>
+    </div>
+    <div id="format-editor"></div>
+  </div>
+</template>
+
 <script setup lang="ts">
-import localforage from 'localforage'
-import { onMounted, onUnmounted, ref } from "vue";
-import { languageList, processFormat } from '../utils/transform';
-import { addCommandSave, addContainer, addEditor2List, createEditorContainer, createEditorInstance, createEditorModel, disposeEditorList, setModelLanguage } from './common/editor';
-import editorConsole from "./common/editor-console";
+import localforage from 'localforage';
+import { onMounted, onUnmounted, ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
+import { toolList, processContent } from '../utils/transform';
+import {
+  addCommandSave,
+  addContainer,
+  addEditor2List,
+  createEditorContainer, 
+  createEditorInstance, 
+  createEditorModel, 
+  disposeEditorList, 
+  setModelLanguage
+} from '../editor/editor';
+import editorConsoleInstance from '../editor/console';
 
 const route = useRoute();
 const router = useRouter();
 
 const language = ref(route.params.language as string);
-const languages = ref(languageList);
+const languages = ref(toolList);
 
 const code1 = `// 粘贴需要进行格式化的代码
 function main() { console.log("Hello World!"); }
@@ -26,14 +49,14 @@ const editor2 = createEditorInstance($container2, model2, { readOnly: true });
 async function save() {
   const code1 = model1.getValue();
   await localforage.setItem(`format.${language.value}`, code1)
-  editorConsole.addConsole("\t[INFO]\t" + "Save Success")
+  editorConsoleInstance.addConsole("\t[INFO]\t" + "Save Success")
 }
 
 async function fetch() {
   await localforage.getItem(`format.${language.value}`).then((value) => {
     model1.setValue(value as string || code1)
   })
-  editorConsole.addConsole("\t[INFO]\t" + "Fetch Success")
+  editorConsoleInstance.addConsole("\t[INFO]\t" + "Fetch Success")
 }
 
 addCommandSave(editor1, async () => {
@@ -57,17 +80,17 @@ async function excute() {
   const value1 = editor1.getValue();
   const type = language.value;
   try {
-    const [value, flag] = await processFormat(value1, type);
+    const [value, flag] = await processContent(value1, type);
     editor2.setValue(value as string);
     if (flag === "unrealized") {
-      editorConsole.addConsole("\t[WARN]\t" + "Format Unrealized");
+      editorConsoleInstance.addConsole("\t[WARN]\t" + "Format Unrealized");
     }
     if (flag === "success") {
-      editorConsole.addConsole("\t[INFO]\t" + "Format Success");
+      editorConsoleInstance.addConsole("\t[INFO]\t" + "Format Success");
     }
   } catch (error: any) {
     editor2.setValue("");
-    editorConsole.addConsole("\t[Error]\t" + error.message);
+    editorConsoleInstance.addConsole("\t[Error]\t" + error.message);
   }
 }
 
@@ -77,7 +100,7 @@ editor1.onDidChangeModelContent((e) => {
 
 const onRadioClick = async (value: string) => {
   router.push({
-    path: `/format/${value}`
+    path: `/${value}`
   })
   language.value = value;
   setModelLanguage(model1, value)
@@ -87,19 +110,6 @@ const onRadioClick = async (value: string) => {
 };
 </script>
 
-<template>
-  <div id="format">
-    <div id="format-form">
-      <div class="g-menu second-level">
-        <div class="g-menu-item" tabindex="0" :class="{ 'is-active': option.value === language }"
-          v-for="option in languages" :key="option.value" @click="onRadioClick(option.value)">
-          <span class="label">{{ option.label }}</span>
-        </div>
-      </div>
-    </div>
-    <div id="format-editor"></div>
-  </div>
-</template>
 
 <style scoped>
 #format {
@@ -119,10 +129,9 @@ const onRadioClick = async (value: string) => {
   display: flex;
 }
 
-:deep #format-editor .container {
+:deep(#format-editor .container) {
   flex: 1;
   height: 100%;
 }
-
-
 </style>
+../editor/console

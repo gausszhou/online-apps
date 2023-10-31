@@ -1,15 +1,9 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-import ToolDiffVue from "../components/ToolDiff.vue";
-import ToolFormatVue from "../components/ToolFormat.vue";
-import ToolCodecVue from "../components/ToolCodec.vue";
-// import ToolJsonVue from "../components/ToolJson.vue";
+import Index from "../views/index.vue";
 
 const routes = [
-  { path: "", redirect: { path:"diff/json" } },
-  { name: "Diff", path: "/diff/:language", component: ToolDiffVue },
-  { name: "Format", path: "/format/:language", component: ToolFormatVue },
-  { name: "Codec", path: "/codec/:type", component: ToolCodecVue },
-  // { name: "JSON", path: "/json", component: ToolJsonVue },
+  { path: "", redirect: { path:"json-format" } },
+  { name: "Index", path: "/:language", component: Index },
 ];
 
 const router = createRouter({

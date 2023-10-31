@@ -11,8 +11,5 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    ToolCodec: typeof import('./src/components/ToolCodec.vue')['default']
-    ToolDiff: typeof import('./src/components/ToolDiff.vue')['default']
-    ToolFormat: typeof import('./src/components/ToolFormat.vue')['default']
   }
 }

@@ -22,11 +22,11 @@
 
 .g-menu-item {
   height: 24px;
-  padding-right: 16px;
+  padding-left: 16px;
   color: #ccc;
   font-size: 14px;
   line-height: 24px;
-  text-align: right;
+  text-align: left;
   border: 1px solid transparent;
   box-sizing: border-box;
   cursor: pointer;

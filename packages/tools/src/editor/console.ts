@@ -28,7 +28,7 @@ class EditorConsole {
   initEvent(){
     window.addEventListener('keydown',(e)=>{
       if(e.key === '`' && e.ctrlKey){
-        // this.toggle()
+        this.toggle()
       }
     })
   }
@@ -47,10 +47,10 @@ class EditorConsole {
     }
   }
   show() {
-    this.container.style.display = "revert";
+    this.container.parentElement!.style.display = "revert";
   }
   hidden() {
-    this.container.style.display = "none";
+    this.container.parentElement!.style.display = "none";
   }
   mount(dom: HTMLElement) {
     addContainer(dom, this.container);

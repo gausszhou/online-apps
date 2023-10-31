@@ -7,7 +7,7 @@ import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 // https://vitejs.dev/config/
 export default defineConfig(async () => ({
   build: {
-    outDir: '../../dist/tools',
+    outDir: '../../dist/tools',    
   },
   base: process.env.NODE_ENV === "development" ? "/" : "/tools/",
   plugins: [
