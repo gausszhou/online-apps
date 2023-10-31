@@ -1,6 +1,6 @@
 module.exports = {
   // 配置路径
-  publicPath: process.env.NODE_ENV === "production" ? "/apps/music/" : "/",
+  publicPath: process.env.NODE_ENV === "production" ? "/music/" : "/",
   // dev
   devServer: {
     https: false,

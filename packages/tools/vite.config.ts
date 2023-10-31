@@ -9,7 +9,7 @@ export default defineConfig(async () => ({
   build: {
     outDir: '../../dist/tools',
   },
-  base: process.env.NODE_ENV === "development" ? "/" : "/apps/tools/",
+  base: process.env.NODE_ENV === "development" ? "/" : "/tools/",
   plugins: [
     vue(),
     AutoImport({

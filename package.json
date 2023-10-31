@@ -1,0 +1,21 @@
+{
+  "name": "online-apps",
+  "version": "1.0.0",
+  "description": "",
+  "devDependencies": {
+    "adm-zip": "^0.5.10"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gausszhou/apps.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gausszhou/apps/issues"
+  },
+  "homepage": "https://github.com/gausszhou/apps#readme"
+}

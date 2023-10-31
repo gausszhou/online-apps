@@ -1,6 +1,6 @@
 module.exports = {
   // 配置相对路径
-  publicPath: process.env.NODE_ENV === "production" ? "/apps/todos/" : "/",
+  publicPath: process.env.NODE_ENV === "production" ? "/todos/" : "/",
     // dev
     devServer: {
       https: false,
