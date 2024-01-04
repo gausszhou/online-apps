@@ -48,12 +48,12 @@ const editor2 = createEditorInstance($container2, model2, { readOnly: true });
 
 async function save() {
   const code1 = model1.getValue();
-  await localforage.setItem(`format.${language.value}`, code1)
+  await localforage.setItem(`tool.${language.value}`, code1)
   editorConsoleInstance.addConsole("\t[INFO]\t" + "Save Success")
 }
 
 async function fetch() {
-  await localforage.getItem(`format.${language.value}`).then((value) => {
+  await localforage.getItem(`tool.${language.value}`).then((value) => {
     model1.setValue(value as string || code1)
   })
   editorConsoleInstance.addConsole("\t[INFO]\t" + "Fetch Success")

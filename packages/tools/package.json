@@ -10,25 +10,13 @@
     "tauri": "tauri"
   },
   "dependencies": {
-    "acorn": "^8.8.2",
-    "astravel": "^0.6.1",
-    "astring": "^1.8.4",
     "dayjs": "^1.11.7",
-    "he": "^1.2.0",
     "localforage": "^1.10.0",
-    "md5": "^2.3.0",
     "monaco-editor": "^0.38.0",
-    "p-queue": "^7.3.4",
-    "prettier": "^2.8.8",
-    "prettier-plugin-java": "^2.1.0",
     "vue": "^3.2.47",
     "vue-router": "^4.2.0"
   },
   "devDependencies": {
-    "@types/he": "^1.2.0",
-    "@types/md5": "^2.3.2",
-    "@types/node": "^18.7.10",
-    "@types/prettier": "^2.7.2",
     "@vitejs/plugin-vue": "^4.2.1",
     "sass": "^1.62.1",
     "typescript": "^4.2.0",
