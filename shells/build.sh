@@ -1,8 +1,6 @@
 pnpm i
 
-pnpm --filter @gausszhou/music build
-time=$(date "+%Y-%m-%d %H:%M:%S")
-echo "pnpm success in $time"
+rm -rf dist
 
 pnpm --filter @gausszhou/todos build
 time=$(date "+%Y-%m-%d %H:%M:%S")
@@ -12,7 +10,15 @@ pnpm --filter @gausszhou/tools build
 time=$(date "+%Y-%m-%d %H:%M:%S")
 echo "pnpm success in $time"
 
+pnpm --filter @gausszhou/music build
+time=$(date "+%Y-%m-%d %H:%M:%S")
+echo "pnpm success in $time"
+
 pnpm --filter @gausszhou/desktop build
+time=$(date "+%Y-%m-%d %H:%M:%S")
+echo "pnpm success in $time"
+
+pnpm --filter @gausszhou/tiktok build
 time=$(date "+%Y-%m-%d %H:%M:%S")
 echo "pnpm success in $time"
 
